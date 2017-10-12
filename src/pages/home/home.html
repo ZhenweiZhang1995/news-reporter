@@ -10,7 +10,7 @@
 
 <ion-content padding>
   <div class="logo">
-    <img class="centerImage" src="../assets/nr.png" alt="" height="160px"/>
+    <img class="centerImage" src="../assets/nr.png" alt="" height="140px" style="margin-top:-10px;"/>
   </div>
   <h3>The NEWS REPORTER</h3>
 
@@ -22,21 +22,6 @@
     <super-tab [root]="galleries" title="Gallery"></super-tab>
 
   </super-tabs>
-
-  <!-- <ion-list>
-    <ion-item *ngFor="let post of posts" (click)="openDetails(post)">
-
-      <p *ngIf="post.attachments[0] != ''">
-
-        <ion-avatar item-start>
-            <img src="{{posts[0].attachments[0].url}}">
-        </ion-avatar>
-          {{post.attachments[0] | json}}
-      </p>
-
-      {{post.title_plain}}
-    </ion-item>
-  </ion-list> -->
 
 
 

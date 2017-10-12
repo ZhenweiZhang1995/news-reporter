@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Http } from '@angular/http';
+import 'rxjs/add/operator/map';
+import { Observable } from 'rxjs/Observable';
+import { App } from 'ionic-angular';
 
 /**
  * Generated class for the GalleriesPage page.
@@ -15,7 +19,20 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class GalleriesPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+galleries: Observable<any>;
+
+  constructor(private app: App, public http: Http) {
+
+  this.http.get('https://nrcolumbus.com/api/get_category_posts/?category_slug=galleries').map(res => res.json()).subscribe
+  (data => {
+    this.galleries = data.posts;
+    console.log('my galleries: ', data.posts);
+  })
+
+  }
+  openDetails(gallery) {
+
+    this.app.getRootNav().push('GalleriesDetailsPage', {gallery: gallery});
   }
 
   ionViewDidLoad() {

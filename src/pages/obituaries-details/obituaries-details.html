@@ -9,17 +9,11 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>
-      {{post.title_plain}}
-    </ion-title>
+      <img src="/assets/banner.png" alt="" height="50px" width="280px" style="margin-top:8px;margin-left:10%;"/>
   </ion-navbar>
 </ion-header>
 
 
 <ion-content padding>
-  <ion-card>
-    <ion-card-content>
-      {{ post.content }}
-    </ion-card-content>
-  </ion-card>
+  <div class="content" [innerHTML] = "'<p>' + post.content + '</p>'"></div>
 </ion-content>

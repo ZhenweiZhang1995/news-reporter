@@ -1,21 +1,19 @@
 <!--
-  Generated template for the NewsDetailsPage page.
+  Generated template for the GalleriesDetailsPage page.
 
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
 <ion-header>
-
   <ion-navbar>
     <img src="/assets/banner.png" alt="" height="50px" width="280px" style="margin-top:8px;margin-left:10%;"/>
   </ion-navbar>
 
 </ion-header>
 
-
 <ion-content padding>
-  <img src="{{new1.thumbnail}}" alt="" class="title_pic"/>
-  <h3>{{new1.title}}</h3>
-  <span class = "author">by {{new1.author.name}}</span>
-  <div class="content" [innerHTML] = "'<p>' + new1.content + '</p>'"></div>
+  <img src="{{gallery.thumbnail}}" alt="" class="title_pic"/>
+  <h3 [innerHTML] = "gallery.title"></h3>
+  <span class = "author">by {{gallery.author.name}}</span>
+  <div class="content" [innerHTML] = "'<p>' + gallery.content + '</p>'"></div>
 </ion-content>

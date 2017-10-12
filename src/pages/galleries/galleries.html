@@ -5,17 +5,20 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>
-      Gallery
-    </ion-title>
-  </ion-navbar>
 </ion-header>
 
 
 <ion-content padding>
-haha
+  <!-- <div ion-fixed> -->
+
+    <ion-list class= "gallery_width">
+      <ion-item *ngFor="let gallery of galleries" (click)="openDetails(gallery)">
+        <img src="{{gallery.thumbnail}}" alt="" class="title_pic"/>
+
+        <div class="title" [innerHTML] = "gallery.title_plain"></div>
+      </ion-item>
+    </ion-list>
+
+
+  <!-- </div> -->
 </ion-content>

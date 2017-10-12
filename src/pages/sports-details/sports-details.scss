@@ -3,8 +3,14 @@ page-sports-details {
     text-align: center;
     font-family: "athelas", serif;
   }
-  p.content{
-    font-family: 'Source Sans Pro', sans-serif;
-    src: url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+  .content{
+    font-family: 'Source Sans Pro', sans-serif !important;
+    src: url("../assets/fonts/Source_Sans_Pro/SourceSansPro-Regular.ttf");
+    font-size: 16px;
+    line-height: 1.7em;
+  }
+  span.author{
+    font-style: italic;
+    font-size: 80%;
   }
 }

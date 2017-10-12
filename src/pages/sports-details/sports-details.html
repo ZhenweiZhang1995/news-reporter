@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <img src="/assets/banner.png" alt="" height="40px" width="280px" style="margin-top:8px;"/>
+    <img src="/assets/banner.png" alt="" height="50px" width="280px" style="margin-top:8px;margin-left:10%;"/>
   </ion-navbar>
 
 </ion-header>
@@ -15,6 +15,7 @@
 
 <ion-content padding>
   <img src="{{sport.thumbnail}}" alt="" class="title_pic"/>
-  <h3>{{sport.title}}</h3>
+  <h3 [innerHTML] = "sport.title"></h3>
+  <span class = "author">by {{sport.author.name}}</span>
   <div class="content" [innerHTML] = "'<p>' + sport.content + '</p>'"></div>
 </ion-content>

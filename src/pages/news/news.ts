@@ -3,7 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { Observable } from 'rxjs/Observable';
-
+import { App } from 'ionic-angular';
 
 /**
  * Generated class for the NewsPage page.
@@ -21,7 +21,7 @@ export class NewsPage {
 
   news: Observable<any>;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http) {
+  constructor(private app: App, public http: Http) {
 
     this.http.get('https://nrcolumbus.com/api/get_category_posts/?category_slug=news').map(res => res.json()).subscribe
     (data => {
@@ -35,7 +35,7 @@ export class NewsPage {
   }
 
   openDetails(new1) {
-    this.navCtrl.push('NewsDetailsPage', {new1: new1});
+    this.app.getRootNav().push('NewsDetailsPage', {new1: new1});
   }
 
 }

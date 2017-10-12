@@ -13,14 +13,16 @@
 </ion-header>
 
 <ion-content padding>
-  <div ion-fixed>
+  <!-- <div ion-fixed> -->
 
-  <ion-list class= "width">
-    <ion-item *ngFor="let new1 of news">
-        {{new1.title_plain}}
-    </ion-item>
-  </ion-list>
+    <ion-list class= "news_width">
+      <ion-item *ngFor="let new1 of news" (click)="openDetails(new1)">
+        <img src="{{new1.thumbnail}}" alt="" class="title_pic"/>
+
+        <div class="title" [innerHTML] = "new1.title_plain"></div>
+      </ion-item>
+    </ion-list>
 
 
-  </div>
+  <!-- </div> -->
 </ion-content>

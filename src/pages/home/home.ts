@@ -20,18 +20,4 @@ export class HomePage {
   galleries: any = "GalleriesPage";
   obituaries: any = "ObituariesPage";
 
-
-
-  constructor(public navCtrl: NavController, public http: Http) {
-
-  this.http.get('https://nrcolumbus.com/api/get_category_posts/?category_slug=obituaries').map(res => res.json()).subscribe
-  (data => {
-    this.posts = data.posts;
-    console.log('my data: ', data.posts);
-  })
-}
-
-  openDetails(post) {
-    this.navCtrl.push('ObituariesDetailsPage', {post: post});
-  }
 }
