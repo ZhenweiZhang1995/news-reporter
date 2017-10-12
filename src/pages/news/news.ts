@@ -1,0 +1,41 @@
+import { Component } from '@angular/core';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Http } from '@angular/http';
+import 'rxjs/add/operator/map';
+import { Observable } from 'rxjs/Observable';
+
+
+/**
+ * Generated class for the NewsPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+
+@IonicPage()
+@Component({
+  selector: 'page-news',
+  templateUrl: 'news.html',
+})
+export class NewsPage {
+
+  news: Observable<any>;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http) {
+
+    this.http.get('https://nrcolumbus.com/api/get_category_posts/?category_slug=news').map(res => res.json()).subscribe
+    (data => {
+      this.news = data.posts;
+      console.log('my news: ', data.posts);
+    })
+  }
+
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad NewsPage');
+  }
+
+  openDetails(new1) {
+    this.navCtrl.push('NewsDetailsPage', {new1: new1});
+  }
+
+}

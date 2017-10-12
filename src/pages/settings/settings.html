@@ -1,0 +1,49 @@
+<!--
+  Generated template for the SettingsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <h3>SETTINGS</h3>
+  <br>
+
+<ion-list>
+  <ion-list-header class = "head">
+    Notification Preference
+  </ion-list-header>
+
+
+
+  <ion-item class="toggle">
+    <ion-label>News</ion-label>
+    <ion-toggle color="secondary" [(ngModel)]="test1"></ion-toggle>
+  </ion-item>
+
+  <ion-item class="toggle">
+    <ion-label>Sports</ion-label>
+    <ion-toggle color="secondary" [(ngModel)]="test2"></ion-toggle>
+  </ion-item>
+
+  <ion-item class="toggle">
+    <ion-label>Obituaries</ion-label>
+    <ion-toggle color="secondary" [(ngModel)]="test3"></ion-toggle>
+  </ion-item>
+
+  <ion-item class="toggle">
+    <ion-label>Classified</ion-label>
+    <ion-toggle color="secondary" [(ngModel)]="test4"></ion-toggle>
+  </ion-item>
+
+</ion-list>
+
+</ion-content>

@@ -3,16 +3,42 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Home</ion-title>
+    <ion-title>
+    </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h3>Ionic Menu Starter</h3>
+  <div class="logo">
+    <img class="centerImage" src="../assets/nr.png" alt="" height="160px"/>
+  </div>
+  <h3>The NEWS REPORTER</h3>
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
+
+  <super-tabs scrollTabs="true">
+    <super-tab [root]="sports" title="Sports"></super-tab>
+    <super-tab [root]="news" title="News"></super-tab>
+    <super-tab [root]="obituaries" title="Obituaries"></super-tab>
+    <super-tab [root]="galleries" title="Gallery"></super-tab>
+
+  </super-tabs>
+
+  <!-- <ion-list>
+    <ion-item *ngFor="let post of posts" (click)="openDetails(post)">
+
+      <p *ngIf="post.attachments[0] != ''">
+
+        <ion-avatar item-start>
+            <img src="{{posts[0].attachments[0].url}}">
+        </ion-avatar>
+          {{post.attachments[0] | json}}
+      </p>
+
+      {{post.title_plain}}
+    </ion-item>
+  </ion-list> -->
+
+
 
   <button ion-button secondary menuToggle>Toggle Menu</button>
 </ion-content>
